@@ -69,7 +69,7 @@ body {
   position: relative;
   width: 200px;
   height: 200px;
-  background-color: #f0f0f0;
+  margin-bottom: 5rem;
   border-radius: 50%;
 }
 
@@ -84,8 +84,78 @@ body {
           transform-origin: bottom center;
 }
 
-.clock-box .clock .needle .hour {
-  -webkit-transform: translate(-50%, -100%) rotate(30deg);
-          transform: translate(-50%, -100%) rotate(30deg);
+.clock-box .clock .hour {
+  -webkit-transform: translate(-50%, -100%) rotate(10deg);
+          transform: translate(-50%, -100%) rotate(10deg);
+}
+
+.clock-box .clock .minute {
+  -webkit-transform: translate(-50%, -100%) rotate(40deg);
+          transform: translate(-50%, -100%) rotate(40deg);
+  height: 100px;
+}
+
+.clock-box .clock .second {
+  -webkit-transform: tranlate(-50%, -100%) rotate(70deg);
+          transform: tranlate(-50%, -100%) rotate(70deg);
+  height: 100px;
+  background-color: #e74c3c;
+}
+
+.clock-box .clock .center-point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 15px;
+  width: 15px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #e74c3c;
+  border-radius: 50%;
+}
+
+.clock-box .clock .center-point::after {
+  content: '';
+  background-color: #000;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.clock-box .time {
+  font-size: 60px;
+}
+
+.clock-box .date {
+  color: #333;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.clock-box .date .circle {
+  background-color: #000;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 18px;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  font-size: 12px;
 }
 /*# sourceMappingURL=main.css.map */
