@@ -15,8 +15,8 @@ html {
 }
 
 html.dark {
-  background-color: #111;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 body {
@@ -82,22 +82,24 @@ body {
   width: 3px;
   -webkit-transform-origin: bottom center;
           transform-origin: bottom center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .clock-box .clock .hour {
-  -webkit-transform: translate(-50%, -100%) rotate(10deg);
-          transform: translate(-50%, -100%) rotate(10deg);
+  -webkit-transform: translate(-50%, -100%) rotate(0deg);
+          transform: translate(-50%, -100%) rotate(0deg);
 }
 
 .clock-box .clock .minute {
-  -webkit-transform: translate(-50%, -100%) rotate(40deg);
-          transform: translate(-50%, -100%) rotate(40deg);
+  -webkit-transform: translate(-50%, -100%) rotate(0deg);
+          transform: translate(-50%, -100%) rotate(0deg);
   height: 100px;
 }
 
 .clock-box .clock .second {
-  -webkit-transform: tranlate(-50%, -100%) rotate(70deg);
-          transform: tranlate(-50%, -100%) rotate(70deg);
+  -webkit-transform: tranlate(-50%, -100%) rotate(0deg);
+          transform: tranlate(-50%, -100%) rotate(0deg);
   height: 100px;
   background-color: #e74c3c;
 }

@@ -6,16 +6,22 @@
     box-sizing: inherit;
 }
 
+
+
 html {
     font-size: 62.5%;
     box-sizing: border-box;
     transition: all 0.5s ease-in;
 
     &.dark {
-        background-color: #111;
-        color: $primary-color;
+        background-color: $primary-color;
+        color: $secondary-color;
     }
 }
+
+
+
+
 
 body {
     display: flex;

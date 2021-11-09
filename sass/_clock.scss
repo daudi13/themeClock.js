@@ -19,19 +19,20 @@
             height: 65px;
             width: 3px;
             transform-origin: bottom center;
+            transition: all 0.5s ease;
         }
 
         .hour {
-            transform: translate(-50%, -100%) rotate(10deg);
+            transform: translate(-50%, -100%) rotate(0deg);
         }
 
         .minute {
-            transform: translate(-50%, -100%) rotate(40deg);
+            transform: translate(-50%, -100%) rotate(0deg);
             height: 100px;
         }
 
         .second {
-            transform: tranlate(-50%, -100%) rotate(70deg);
+            transform: tranlate(-50%, -100%) rotate(0deg);
             height: 100px;
             background-color: #e74c3c;
         }
