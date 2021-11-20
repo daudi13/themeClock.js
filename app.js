@@ -10,7 +10,7 @@ theBtn.addEventListener('click', function () {
     if (!theBtn.classList.contains('dark')) {
         html.classList.add('dark');
         theBtn.innerHTML = `Light Mode`;
-        theBtn.classList.add('dark')
+        theBtn.classList.add('dark');
     } else {
         html.classList.remove('dark');
         theBtn.classList.remove('dark');

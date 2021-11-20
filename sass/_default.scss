@@ -47,3 +47,7 @@ body {
     }
 }
 
+.toggle.dark {
+        background-color: $secondary-color!important;
+        color: $primary-color!important;
+    }
