@@ -4,7 +4,11 @@ const theMinute = document.querySelector('.minute');
 const theSecond = document.querySelector('.second');
 const thetime = document.querySelector('.time');
 const thedate = document.querySelector('.date');
-const html = document.querySelector('html')
+const html = document.querySelector('html');
+
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+const month = ['January', 'February', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 theBtn.addEventListener('click', function (e) {
     if (html.classList.contains('dark')) {
@@ -33,10 +37,17 @@ function ticktock() {
     const hour = theTime.getHours();
     const minutes = theTime.getMinutes();
     const seconds = theTime.getSeconds();
+    const months = theTime.getMonth();
+    const day = theTime.getDay();
+    const theDate = theTime.getDate();
+    const amPm = hour > 12 ? `${hour - 12}` : hour;
 
-    theHour.style.transform = `translate(-50, -100) rotate(${scale(hour, 0, 11, 0, 360)}deg)`;
-    theMinute.style.transform = `translate(-50, -100) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`;
-    theSecond.style.transform = `translate(-50, -100) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`;
+    theHour.style.transform = `translate(-50%, -100%) rotate(${scale(hour, 0, 12, 0, 360)}deg)`;
+    theMinute.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`;
+    theSecond.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`;
+
+    thetime.innerText = `${hour<10? `0${hour}`: hour}:${minutes<10? `0${minutes}`: minutes}`;
+    thedate.innerText = `${days[day-1]}, ${theDate} ${month[months-1]}`
 }
 
 
