@@ -24,6 +24,8 @@ theBtn.addEventListener('click', function (e) {
     }
 });
 
+setInterval(ticktock, 1000)
+
 ticktock()
 
 function ticktock() {
@@ -33,7 +35,9 @@ function ticktock() {
     const minutes = theTime.getMinutes();
     const seconds = theTime.getSeconds();
 
-    theHour.style.transform = `translate(50, -100) rotate(${scale()})`
+    theHour.style.transform = `translate(50, -100) rotate(${scale(hour, 0, 11, 0, 360)}deg)`;
+    theMinute.style.transform = `translate(50, -100) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`;
+    theSecond.style.transform = `translate(50, -100) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`
 }
 
 
