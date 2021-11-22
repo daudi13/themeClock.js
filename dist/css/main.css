@@ -49,6 +49,11 @@ body {
   outline: none;
 }
 
+.toggle.dark {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
 .clock-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,8 +87,6 @@ body {
   width: 3px;
   -webkit-transform-origin: bottom center;
           transform-origin: bottom center;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
 }
 
 .clock-box .clock .hour {

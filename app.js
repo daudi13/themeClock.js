@@ -1,58 +1,54 @@
-
-
-const toggleBtn = document.querySelector('.toggle');
+const theBtn = document.querySelector('.toggle');
+const theHour = document.querySelector('.hour');
+const theMinute = document.querySelector('.minute');
+const theSecond = document.querySelector('.second');
+const thetime = document.querySelector('.time');
+const thedate = document.querySelector('.date');
 const html = document.querySelector('html');
-const hourEl = document.querySelector('.hour');
-const minuteEl = document.querySelector('.minute');
-const secondEl = document.querySelector('.second');
-const timeEl = document.querySelector('.time');
-const dateEl = document.querySelector('.date');
 
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const month = ['January', 'February', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-toggleBtn.addEventListener('click', function (e) {
+theBtn.addEventListener('click', function (e) {
     if (html.classList.contains('dark')) {
         html.classList.remove('dark');
-        e.target.innerText = 'Dark mode';
-        toggleBtn.style.backgroundColor = '#000';
-        toggleBtn.style.color = `#fff`;
-        hourEl.style.backgroundColor = '#000';
-        minuteEl.style.backgroundColor = '#000';
+        e.target.innerText = 'Dark Mode';
+        theBtn.style.backgroundColor = `#000`;
+        theHour.style.backgroundColor = `#000`;
+        theMinute.style.backgroundColor = `#000`;
+        theBtn.style.color = `#fff`;
     } else {
         html.classList.add('dark');
-        toggleBtn.innerText = 'light mode';
-        toggleBtn.style.backgroundColor = `#fff`
-        toggleBtn.style.color = `#000`
-        hourEl.style.backgroundColor = '#fff';
-        minuteEl.style.backgroundColor = '#fff';
+        e.target.innerText = 'Light Mode';
+        theBtn.style.backgroundColor = `#fff`;
+        theHour.style.backgroundColor = `#fff`;
+        theMinute.style.backgroundColor = `#fff`;
+        theBtn.style.color = `#000`;
     }
 });
 
-setInterval(setTime, 1000);
-
-function setTime() {
-    const time = new Date();
-    const date = time.getDate();
-    const month = time.getMonth();
-    const day = time.getDay();
-    const hours = time.getHours();
-    const hoursForClock = hours % 12;
-    const minTime = time.getMinutes();
-    const seconds = time.getSeconds();
-    const ampm = hours <= 12 ? 'AM' : 'PM';
-
-    hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 11, 0, 360)}deg)`;
-    minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(minTime, 0, 59, 0, 360)}deg)`;
-    secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`;
-    timeEl.innerText = `${hours<10? `0${hours}`: hours}:${minTime<10? `0${minTime}`: minTime} ${ampm}`;
-    dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`; 
+setInterval(ticktock, 1000)
 
 
+function ticktock() {
+    
+    const theTime = new Date();
+    const hour = theTime.getHours();
+    const minutes = theTime.getMinutes();
+    const seconds = theTime.getSeconds();
+    const months = theTime.getMonth();
+    const day = theTime.getDay();
+    const theDate = theTime.getDate();
+    const amPm = hour > 12 ? `${hour - 12}` : hour;
+
+    theHour.style.transform = `translate(-50%, -100%) rotate(${scale(hour, 0, 12, 0, 360)}deg)`;
+    theMinute.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 59, 0, 360)}deg)`;
+    theSecond.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 59, 0, 360)}deg)`;
+
+    thetime.innerText = `${hour<10? `0${hour}`: hour}:${minutes<10? `0${minutes}`: minutes}`;
+    thedate.innerText = `${days[day-1]}, ${theDate} ${month[months-1]}`
 }
-
-
 
 
 function scale(num, inMin, inMax, outMin, outMax) {
