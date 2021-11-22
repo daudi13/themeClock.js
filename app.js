@@ -7,7 +7,7 @@ const thedate = document.querySelector('.date');
 const html = document.querySelector('html')
 
 theBtn.addEventListener('click', function () {
-    if (!theBtn.classList.contains('dark')) {
+    if (theBtn.classList.contains('dark')) {
         html.classList.add('dark');
         theBtn.innerHTML = `Light Mode`;
         theBtn.classList.add('dark');
