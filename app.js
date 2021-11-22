@@ -33,5 +33,10 @@ function ticktock() {
     const minutes = theTime.getMinutes();
     const seconds = theTime.getSeconds();
 
-    
+    theHour.style.transform = `translate(50, -100) rotate(${scale()})`
 }
+
+
+function scale(num, inMin, inMax, outMin, outMax) {
+    return (num - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+};
