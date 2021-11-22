@@ -6,13 +6,15 @@ const thetime = document.querySelector('.time');
 const thedate = document.querySelector('.date');
 const html = document.querySelector('html')
 
-theBtn.addEventListener('click', function () {
+theBtn.addEventListener('click', function (e) {
     if (theBtn.classList.contains('dark')) {
-        html.classList.add('dark');
-        theBtn.innerHTML = `Light Mode`;
-        theBtn.classList.add('dark');
+        theBtn.classList.remove('dark');
+        e.target.innerHTML = 'Dark Mode';
+        theBtn.style.backgroundColor = `#fff`;
+        theHour.style.backgroundColor = `#fff`;
+        theMinute.style.backgroundColor = `#fff`;
     } else {
-        html.classList.remove('dark');
+        html.classList.add('dark');
         theBtn.classList.remove('dark');
         theBtn.innerHTML = `Dark Mode`;
     }
