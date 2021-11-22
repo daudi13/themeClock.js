@@ -23,3 +23,13 @@ theBtn.addEventListener('click', function (e) {
         theBtn.style.color = `#000`;
     }
 });
+
+ticktock()
+
+function ticktock() {
+    
+    const theTime = new Date();
+    const hour = theTime.getTime();
+
+    console.log(hour);
+}
