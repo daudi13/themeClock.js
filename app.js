@@ -8,14 +8,16 @@ const html = document.querySelector('html')
 
 theBtn.addEventListener('click', function (e) {
     if (theBtn.classList.contains('dark')) {
-        theBtn.classList.remove('dark');
-        e.target.innerHTML = 'Dark Mode';
+        html.classList.remove('dark');
+        e.target.innerText = 'Dark Mode';
         theBtn.style.backgroundColor = `#fff`;
         theHour.style.backgroundColor = `#fff`;
         theMinute.style.backgroundColor = `#fff`;
     } else {
         html.classList.add('dark');
-        theBtn.classList.remove('dark');
-        theBtn.innerHTML = `Dark Mode`;
+        e.target.innerText = 'Light Mode';
+        theBtn.style.backgroundColor = `#000`;
+        theHour.style.backgroundColor = `#000`;
+        theMinute.style.backgroundColor = `#000`;
     }
 });
