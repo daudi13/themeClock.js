@@ -29,7 +29,9 @@ ticktock()
 function ticktock() {
     
     const theTime = new Date();
-    const hour = theTime.getTime();
+    const hour = theTime.getHours();
+    const minutes = theTime.getMinutes();
+    const seconds = theTime.getSeconds();
 
-    console.log(hour);
+    
 }
